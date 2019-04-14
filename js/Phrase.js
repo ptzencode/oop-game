@@ -1,8 +1,8 @@
 
 class Phrase {
 
-    constructor(){
-
+    constructor(phrase){
+        this.phrase = phrase.toLowerCase();
     }
 
 }
