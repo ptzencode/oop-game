@@ -29,13 +29,15 @@ class Phrase {
     /**
     * Checks if passed letter is in phrase
     * @param (string) letter - Letter to check
-    * @return {boolean} True if letter found in phrase
+    * @return {boolean} True if letter found in phrase, else return false
     */
     checkLetter(letter) {
         let match = this.phrase.indexOf(letter);
         if(match !== -1){
             console.log(`${letter} found at index: ${match}`);
             return true;
+        } else {
+            return false;
         }
     }
 
