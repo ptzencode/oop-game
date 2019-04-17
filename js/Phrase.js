@@ -29,11 +29,27 @@ class Phrase {
     /**
     * Checks if passed letter is in phrase
     * @param (string) letter - Letter to check
+    * @return {boolean} True if letter found in phrase
     */
     checkLetter(letter) {
         let match = this.phrase.indexOf(letter);
         if(match !== -1){
             console.log(`${letter} found at index: ${match}`);
+            return true;
+        }
+    }
+
+    /**
+    * Displays passed letter on screen after a match is found
+    * @param (string) letter - Letter to display
+    */
+    showMatchedLetter(letter) {
+        let list = document.querySelectorAll('#phrase ul li');
+
+        for(let li of list){
+            if(li.classList.contains(letter)){
+                li.classList.replace('hide','show');
+            }
         }
     }
 
