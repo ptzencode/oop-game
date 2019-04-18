@@ -82,9 +82,30 @@ class Game {
             }
         }
         if(this.missed === listScore.length){
-            console.log('game over');
+            //console.log('game over');
+            this.gameOver(false);
         }
 
+    }
+
+    /**
+    * Displays game over message
+    * @param {boolean} gameWon - Whether or not the user won the game
+    */
+    gameOver(gameWon) {
+        const overlay = document.getElementById('overlay');
+
+        let gameOverMessage = '';
+        if(gameWon){
+            gameOverMessage = 'Great Job, you won!';
+            overlay.className = 'win';
+        } else {
+            gameOverMessage = 'Sorry, you lost!';
+            overlay.className = 'lose';
+        }
+        document.getElementById('game-over-message').textContent = gameOverMessage;
+
+        overlay.style.display = 'flex';
     }
 
 }
