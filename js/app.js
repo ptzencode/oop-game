@@ -9,4 +9,5 @@ document.getElementById('btn__reset').addEventListener('click', function() {
     console.log(`checkLetter ${game.activePhrase.checkLetter('a')}`);
     console.log(`showMatchedLetter ${game.activePhrase.showMatchedLetter('a')}`);
     console.log(`checkForWin ${game.checkForWin()}`);
+    console.log(`removeLife ${game.removeLife()}`);
 });

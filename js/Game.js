@@ -67,4 +67,24 @@ class Game {
         }
     }
 
+    /**
+    * Increases the value of the missed property
+    * Removes a life from the scoreboard
+    * Checks if player has remaining lives and ends game if player is out
+    */
+    removeLife() {
+        this.missed += 1;
+        let listScore = document.querySelectorAll('#scoreboard ol li');
+        for(let i=0; i<listScore.length; i++){
+            if(i === this.missed-1){
+                let img = listScore[i].querySelector('img');
+                img.setAttribute('src','images/lostHeart.png');
+            }
+        }
+        if(this.missed === listScore.length){
+            console.log('game over');
+        }
+
+    }
+
 }
