@@ -130,4 +130,31 @@ class Game {
         }
     }
 
+    /**
+    * Reset game - Remove active Phrase from display
+    * Enable all onscreen keyboard buttons
+    * Reset all heart images in the scoreboard
+    */
+
+    resetGame(){
+        const ul = document.querySelector('#phrase ul');
+
+        while (ul.firstChild) {
+          ul.removeChild(ul.firstChild);
+        }
+
+        let buttons = document.querySelectorAll('#qwerty button.key');
+        buttons.forEach(button => {
+            if(button.disabled){
+                button.disabled = false;
+            }
+            button.classList.remove('chosen','wrong');
+        });
+
+        let scoreImgs = document.querySelectorAll('#scoreboard img');
+        scoreImgs.forEach(img => {
+            img.setAttribute('src','images/liveHeart.png');
+        });
+    }
+
 }
