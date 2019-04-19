@@ -19,3 +19,18 @@ document.getElementById('qwerty').addEventListener('click',function(e){
         game.handleInteraction(isButton);
     }
 });
+
+document.addEventListener('keyup',function(e){
+    let key = e.key;
+    let buttons = document.querySelectorAll('#qwerty button.key');
+    let clickedButton = null;
+    buttons.forEach(button => {
+        if(button.textContent === key){
+            clickedButton = button;
+        }
+    });
+    if(clickedButton){
+        console.log(clickedButton);
+    }
+});
+
