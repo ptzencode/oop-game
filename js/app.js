@@ -1,6 +1,6 @@
 
 //start game with button click
-let game;
+let game = null;
 document.getElementById('btn__reset').addEventListener('click', function() {
     game = new Game();
     game.startGame();
@@ -23,7 +23,7 @@ document.addEventListener('keyup',function(e){
         }
     });
     if(clickedButton){
-        console.log(clickedButton);
+        game.handleInteraction(clickedButton);
     }
 });
 
