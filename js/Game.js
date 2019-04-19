@@ -82,7 +82,6 @@ class Game {
             }
         }
         if(this.missed === listScore.length){
-            //console.log('game over');
             this.gameOver(false);
         }
 
@@ -113,7 +112,22 @@ class Game {
     * @param (HTMLButtonElement) button - The clicked button element
     */
     handleInteraction(button) {
-      console.log(button);
+        let letter = button.textContent;
+        let isLetterInPhrase = false;
+        button.disabled = true;
+        if(this.activePhrase){
+            isLetterInPhrase = this.activePhrase.checkLetter(letter);
+            if(isLetterInPhrase){
+                button.classList.add('chosen');
+                this.activePhrase.showMatchedLetter(letter);
+                if(this.checkForWin()){
+                    this.gameOver(true);
+                }
+            } else {
+                button.classList.add('wrong');
+                this.removeLife();
+            }
+        }
     }
 
 }

@@ -34,7 +34,6 @@ class Phrase {
     checkLetter(letter) {
         let match = this.phrase.indexOf(letter);
         if(match !== -1){
-            console.log(`${letter} found at index: ${match}`);
             return true;
         } else {
             return false;
