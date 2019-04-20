@@ -101,6 +101,7 @@ button {
   color: transparent;
   background: var(--color-neutral-light);
   border-radius: 5px;
+  border:2px dotted #4ac0d5;
 }
 
 .space {
@@ -130,15 +131,24 @@ button {
   justify-content: center;
 }
 
+.keyrow button {
+  border: 1px dotted;
+}
+
+.chosen,
+.wrong {
+  opacity: 0.8;
+}
+
 .chosen {
-  background: #3a3f58;
+  background-color:#4ac0d5;
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #FFFFFF;
 }
 
 .wrong {
-  background: #f7a964;
+  background-color: #f08080;
   color: #FFFFFF;
 }
 
